@@ -14,13 +14,24 @@ public class Main
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Actor actorRef = context.getBean("actor",Actor.class);
+        Actor actorRef1 = context.getBean("actor1",Actor.class);
+        System.out.println(actorRef1.toString());
 
-        System.out.println(actorRef.toString());
+        Actor actorRef2 = context.getBean("actor2",Actor.class);
+        System.out.println(actorRef2.toString());
 
-        Movie movieRef = context.getBean("movie",Movie.class);
+        Actor actorRef3 = context.getBean("actor3",Actor.class);
+        System.out.println(actorRef3.toString());
 
-        System.out.println(movieRef.toString());
+
+
+        Movie movieRef1 = context.getBean("movie1",Movie.class);
+        System.out.println(movieRef1.toString());
+
+        Movie movieRef2 = context.getBean("movie1",Movie.class);
+        System.out.println(movieRef1.toString());
+
+        System.out.println(movieRef1 == movieRef2);
 
 
     }

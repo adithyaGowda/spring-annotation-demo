@@ -4,27 +4,45 @@ package com.stackroute;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+
 
 
 public class AppConfig {
 
-    @Bean(name = "actor")
-    public Actor getActor(){
+    @Bean(name = "actor1")
+    public Actor getActor1(){
 
-        Actor actor = new Actor();
-        actor.setName("John");
-        actor.setGender("male");
-        actor.setAge(10);
-
-        return actor;
+        Actor actor1 = new Actor("John","male",40);
+        return actor1;
     }
 
-    @Bean(name = "movie")
-    public Movie getMovie(){
-        Movie movie = new Movie();
+    @Bean(name = "actor2")
+    public Actor getActor2(){
 
-        return movie;
+        Actor actor2 = new Actor("Tom","male",35);
+        return actor2;
+    }
+
+    @Bean(name = "actor3")
+    public Actor getActor3(){
+
+        Actor actor3 = new Actor("Mary","female",25);
+        return actor3;
+    }
+
+
+    @Bean(name = "movie1")
+    public Movie getMovie1(){
+        Movie movie1 = new Movie();
+
+        return movie1;
+    }
+
+    @Bean(name = "movie1")
+    public Movie getMovie2(){
+        Movie movie2 = new Movie();
+
+        return movie2;
     }
 
 }
