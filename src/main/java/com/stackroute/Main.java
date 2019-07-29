@@ -1,9 +1,11 @@
 package com.stackroute;
 
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
@@ -23,11 +25,21 @@ public class Main
         System.out.println(actorRef3.toString());
 
         Movie movieRef1 = context.getBean("movie1",Movie.class);
-        Movie movieRef2 = context.getBean("movie2",Movie.class);
+
 
         System.out.println(movieRef1.toString());
-        System.out.println(movieRef2.toString());
+        
 
+
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+
+
+        ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        BeanLifecycleDemoBean demoBean = applicationContext.getBean("beanLifeCycleDemoBean",BeanLifecycleDemoBean.class);
+        System.out.println(demoBean.getMessage());
+
+        applicationContext.close();
 
 
 

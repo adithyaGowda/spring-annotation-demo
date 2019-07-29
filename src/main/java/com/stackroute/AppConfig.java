@@ -1,6 +1,7 @@
 package com.stackroute;
 
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
@@ -22,14 +23,14 @@ public class AppConfig {
     public Actor getActor2(){
 
         actor2 = new Actor("Victor","male",35);
-        return actor1;
+        return actor2;
     }
 
     @Bean(name = "actor3")
     public Actor getActor3(){
 
         actor3 = new Actor("Mary","female",25);
-        return actor1;
+        return actor3;
     }
 
 
@@ -41,18 +42,17 @@ public class AppConfig {
         movie1.setActor2(actor2);
         movie1.setActor3(actor3);
 
+
         return movie1;
     }
 
-    @Bean(name = "movie2")
-    public Movie getMovie2(){
-        Movie movie2 = new Movie();
 
-        movie2.setActor1(actor1);
-        movie2.setActor2(actor2);
-        movie2.setActor3(actor3);
+    @Bean(name = "beanLifeCycleDemoBean")
+    public BeanLifecycleDemoBean getBeanLife(){
 
-        return movie2;
+        BeanLifecycleDemoBean beanLifeCycleDemoBean = new BeanLifecycleDemoBean();
+        beanLifeCycleDemoBean.setMessage("Hello world, Welcome to programming");
+        return beanLifeCycleDemoBean;
     }
 
 
