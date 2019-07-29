@@ -1,5 +1,9 @@
 package com.stackroute.domain;
 
+import org.springframework.stereotype.Component;
+
+
+
 public class Actor {
 
     private String name;
