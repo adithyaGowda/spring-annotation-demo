@@ -9,8 +9,11 @@ public class Movie {
     private Actor actor;
 
 
+    public Actor getActor() {
+        return actor;
+    }
+
     @Autowired
-    @Qualifier("actor1")
     public void setActor(Actor actor) {
         this.actor = actor;
     }
